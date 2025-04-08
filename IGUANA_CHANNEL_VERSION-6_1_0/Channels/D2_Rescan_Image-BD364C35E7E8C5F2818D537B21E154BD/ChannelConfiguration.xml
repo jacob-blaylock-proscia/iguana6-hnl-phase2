@@ -1,0 +1,19 @@
+<channel
+   name="D2_Rescan Image"
+   guid="BD364C35E7E8C5F2818D537B21E154BD"
+   description=""
+   start_automatically="true"
+   logging_level="1"
+   use_message_filter="false">
+   <to_mapper
+      guid="D2_Rescan_Image-To-llFicSL2gGMxq5"
+      commit_id="ca5bd7bd5a2685e36dd3582cf45eeb747a99b1b8"
+      commit_comment="Import Translators: Improved status changes update">
+      <dequeue_list>
+         <dequeue
+            source_name="D1_Rescan Image Webhook"
+            dequeue_guid="BD1C9B18A52346D77D5DF61EE751D394"/>
+      </dequeue_list>
+   </to_mapper>
+   <from_channel/>
+</channel>

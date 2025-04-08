@@ -1,0 +1,33 @@
+<channel
+   name="B3_Update Image"
+   guid="CE26A3D095EE3431D98005843EE73E5E"
+   description=""
+   start_automatically="true"
+   logging_level="1"
+   use_message_filter="true">
+   <to_mapper
+      guid="Update_Image-To-CEPMX1ipCWMg6s"
+      commit_id="ca5bd7bd5a2685e36dd3582cf45eeb747a99b1b8"
+      commit_comment="Import Translators: Improved status changes update">
+      <dequeue_list>
+         <dequeue
+            source_name="B2_UpdateImage Passthru"
+            dequeue_guid="CA3B2771FC8012E1287051FAFBDCDA60"/>
+      </dequeue_list>
+   </to_mapper>
+   <from_channel/>
+   <message_filter
+      filter_after_logging="true"
+      log_pre_post_filter_message="true"
+      keep_vmd_updated="false"
+      original_vmd_path=""
+      filter_vmd_path=""
+      transformation_mode="0"
+      scripted_transformation_configuration_name="default"
+      error_handling="0"
+      use_translator_filter="true"
+      translator_guid="Update_Image-Filter-GfvKeRmAZVaVSe"
+      translator_commit_id="55038b86c51e0260d528a21b2bfe43d8eb5ca94d"
+      translator_commit_comment="Update alert exceptions list">
+   </message_filter>
+</channel>

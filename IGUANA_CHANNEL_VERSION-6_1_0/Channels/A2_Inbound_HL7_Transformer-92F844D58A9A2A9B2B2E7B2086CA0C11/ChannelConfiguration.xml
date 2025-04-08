@@ -1,0 +1,30 @@
+<channel
+   name="A2_Inbound HL7 Transformer"
+   guid="92F844D58A9A2A9B2B2E7B2086CA0C11"
+   description=""
+   start_automatically="true"
+   logging_level="1"
+   use_message_filter="true">
+   <to_channel>
+      <dequeue_list>
+         <dequeue
+            source_name="A1_Inbound HL7"
+            dequeue_guid="4F220E32DB39DA345EF1F96B9E68827A"/>
+      </dequeue_list>
+   </to_channel>
+   <from_channel/>
+   <message_filter
+      filter_after_logging="false"
+      log_pre_post_filter_message="true"
+      keep_vmd_updated="false"
+      original_vmd_path=""
+      filter_vmd_path=""
+      transformation_mode="0"
+      scripted_transformation_configuration_name="default"
+      error_handling="0"
+      use_translator_filter="true"
+      translator_guid="A2_Inbound_HL7_Transformer-Filter-wEVQvDHFEc5fQD"
+      translator_commit_id="cce098235c9da8c3d446b816818fc3b62ab754c2"
+      translator_commit_comment="Correct OBR references in the loop">
+   </message_filter>
+</channel>

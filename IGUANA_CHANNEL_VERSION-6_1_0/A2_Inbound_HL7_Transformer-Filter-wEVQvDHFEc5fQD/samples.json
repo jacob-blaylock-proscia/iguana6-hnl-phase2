@@ -1,0 +1,84 @@
+{
+    "Samples": [
+        {
+            "Message": "MSH|^~\\&|COPATHPLUS||IMAGER||20241031121933||OML^O21|38000095307071|P|2.3\rPID|||1831700^^^1||TEST^Jacob||20030117|M\rORC|NW|S24-99539||SZ|||||202410311219\rOBR|1|S24-99539|S24-99539_1_7_1||||||||||||Duodenum, 2nd part and bulb, biopsy^^Level 1 (H&E)||||A^1^1|GIB^GIB   Gastrointestinal Bx|||||||ROUT",
+            "Name": "S24-99539_1_7_1"
+        },
+        {
+            "Message": "MSH|^~\\&|COPATHPLUS||IMAGER||20241031121933||OML^O21|38000095307072|P|2.3\rPID|||1831700^^^1||TEST^Jacob||20030117|M\rORC|NW|S24-99539||SZ|||||202410311219\rOBR|1|S24-99539|S24-99539_1_8_1||||||||||||Duodenum, 2nd part and bulb, biopsy^^Level 2 (H&E)||||A^1^2|GIB^GIB   Gastrointestinal Bx|||||||ROUT",
+            "Name": "S24-99539_1_8_1"
+        },
+        {
+            "Message": "MSH|^~\\&|COPATHPLUS||IMAGER||20241031121933||OML^O21|38000095307073|P|2.3\rPID|||1831700^^^1||TEST^Jacob||20030117|M\rORC|NW|S24-99539||SZ|||||202410311219\rOBR|1|S24-99539|S24-99539_1_9_1||||||||||||Duodenum, 2nd part and bulb, biopsy^^Level 3 (H&E)||||A^1^3|GIB^GIB   Gastrointestinal Bx|||||||ROUT",
+            "Name": "S24-99539_1_9_1"
+        },
+        {
+            "Message": "MSH|^~\\&|COPATHPLUS||IMAGER||20241031121933||OML^O21|38000095307074|P|2.3\rPID|||1831700^^^1||TEST^Jacob||20030117|M\rORC|NW|S24-99539||SZ|||||202410311219\rOBR|1|S24-99539|S24-99539_2_2_1||||||||||||Gastric antrum, biopsy^^Level 1-3||||B^1^1|GIB^GIB   Gastrointestinal Bx|||||||ROUT",
+            "Name": "S24-99539_2_2_1"
+        },
+        {
+            "Message": "MSH|^~\\&|COPATHPLUS||IMAGER||20241031121933||OML^O21|38000095307075|P|2.3\rPID|||1831700^^^1||TEST^Jacob||20030117|M\rORC|NW|S24-99539||SZ|||||202410311219\rOBR|1|S24-99539|S24-99539_3_3_1||||||||||||Ileum, terminal, biopsy^^Level 1 (H&E)||||C^1^1|GIB^GIB   Gastrointestinal Bx|||||||ROUT",
+            "Name": "S24-99539_3_3_1"
+        },
+        {
+            "Message": "MSH|^~\\&|COPATHPLUS||IMAGER||20241031121933||OML^O21|38000095307076|P|2.3\rPID|||1831700^^^1||TEST^Jacob||20030117|M\rORC|NW|S24-99539||SZ|||||202410311219\rOBR|1|S24-99539|S24-99539_3_4_1||||||||||||Ileum, terminal, biopsy^^Level 2 (H&E)||||C^1^2|GIB^GIB   Gastrointestinal Bx|||||||ROUT",
+            "Name": "S24-99539_3_4_1"
+        },
+        {
+            "Message": "MSH|^~\\&|COPATHPLUS||IMAGER||20241031121933||OML^O21|38000095307077|P|2.3\rPID|||1831700^^^1||TEST^Jacob||20030117|M\rORC|NW|S24-99539||SZ|||||202410311219\rOBR|1|S24-99539|S24-99539_3_5_1||||||||||||Ileum, terminal, biopsy^^Level 3 (H&E)||||C^1^3|GIB^GIB   Gastrointestinal Bx|||||||ROUT",
+            "Name": "S24-99539_3_5_1"
+        },
+        {
+            "Message": "MSH|^~\\&|COPATHPLUS||IMAGER||20241031121933||OML^O21|38000095307078|P|2.3\rPID|||1831700^^^1||TEST^Jacob||20030117|M\rORC|NW|S24-99539||SZ|||||202410311219\rOBR|1|S24-99539|S24-99539_4_6_1||||||||||||Polyp, transverse colon^^Level 1-3||||D^1^1|GIB^GIB   Gastrointestinal Bx|||||||ROUT",
+            "Name": "S24-99539_4_6_1"
+        },
+        {
+            "Message": "MSH|^~\\&|COPATHPLUS|LVH|||20240510161500||ORU^R01|3652|P|2.2\rPID|1||12001404||PASQUALE^AMB||19770309|F|||LONE LANE^^EMMAUS^PA^18049^United States||(613)423-4422||||||342-44-2344\rPV1|1||LVP;1||||P4608;1^LIU^HENRY||||||||||P4608;1^LIU^HENRY|OP|001001054\\12001404\\1\\10\\1|||||||||||||||||||||||||202404160000\rORC|RE|1005401883|S24-267^CoPathPlus||CM||||202405101554|^Pathologist^Staff||P4608;1^LIU^HENRY\rOBR|1|1005401883|S24-267^CoPathPlus|PATHSG^Surgical Pathology|||202405100000|||||||202405101551|PARA|P4608;1||||||||SP|F",
+            "Name": ""
+        },
+        {
+            "Message": "MSH|^~\\&|COPATHPLUS|LVH|||20240816100507||ORU^R01|6575|P|2.2\rPID|1||12001975||TEST^ABIGAIL^RUTH||19820101|F|||742 PARK AVENUE^^STROUDSBURG^PA^18360^United States||(570)977-0153||||||394-52-3457\rPV1|1||WCCM;1^2106||||P0352;1^BOORSE^RICHARD||||||||||P0352;1^BOORSE^RICHARD|IP|000961713\\12001975\\1\\2\\1|||||||||||||||||||||||||202402130000\rORC|RE|1005508128|HP24-25^CoPathPlus||CM||||202407251630|^Clark^Maureen||P0352;1^BOORSE^RICHARD\rOBR|1|1005508128|HP24-25^CoPathPlus|PATHSG^Surgical Pathology|||202407250000|||||||202407250000||P0352;1||||||202407291129||SP|C|||||||^Pathologist^Staff|^Pathologist^Staff\r",
+            "Name": ""
+        },
+        {
+            "Message": "MSH|^~\\&|COPATHPLUS||IMAGER||20240807100115||OML^O21|63411|P|2.3\rPID|||A00000378^^^1||TEST^FAST||19830516|M\rORC|NW|S24-570||SP|||||202408071001\rOBR|1|S24-570|||||||||||||||||^^1|DERR^DERR  Dermatopathology Routine|||||||ROUT\r",
+            "Name": ""
+        },
+        {
+            "Message": "MSH|^~\\&|COPATHPLUS||IMAGER||20241121133626||OML^O21|75841|P|2.3\rPID|||12001398^^^1||MILLER^ABBY||19770707|F\rORC|SC|S24-481||S|||||202407111814\rOBR|1|S24-481|S24-481_1_1_1||||||||||||Polyp, cervix^^H&E, Initial||||A^1^1|WOB^WOB  Gynecological Bx|||||||ROUT|||||E4286^Sajjad^Malik\r",
+            "Name": ""
+        },
+        {
+            "Message": "MSH|^~\\&|COPATHPLUS||IMAGER||20241125101642||ADT^A08|7663|P|2.3\rPID|||DEMO-1959^^^DEMO;1||TEST^URINE||19531013|M\r",
+            "Name": ""
+        },
+        {
+            "Message": "MSH|^~\\&|COPATHPLUS|LVH|||20241202143148||ORU^R01|7768|P|2.2\rPID|1||A00054147||COOKIE^GINGERBREAD||20001010|F|||123 COOKIE WAY^^WALNUTPORT^PA^18088^United States\rPV1|1||C400;1||||2E1798;1^BAIRD^ROWAN||||||||||2E1798;1^BAIRD^ROWAN|OP|00054147202411250630\\A00054147\\1\\9\\1|||||||||||||||||||||||||202411250000\rORC|RE|765|S24-809^CoPathPlus||CM||||202412021409|^Clark^Maureen||2E1798;1^BAIRD^ROWAN\rOBR|1|765|S24-809^CoPathPlus|PATHSG^Surgical Pathology|||202412020000|||||||202412020000|ALOPBX|2E1798;1||||||202412021412||SP|F|||||||1356421564^Dellers^Elizabeth|^Pathologist^Staff\r",
+            "Name": ""
+        },
+        {
+            "Message": "MSH|^~\\&|COPATHPLUS||IMAGER||20241217093321||OML^O21|793117|P|2.3\rPID|||13024670^^^1||TEST^TAFF||19750205|F\rORC|SC|S24-802||SZ|||||202411221735\rOBR|1|S24-802|S24-802_4_14_1||||||||||||Sentinel lymph node #3^^Cytokeratin AE1/AE3, Dako||||D^1^2|BRR^BRR   Breast Routine|||||||ROUT|||||E4031^Lisa^Dwyer-Joyce",
+            "Name": ""
+        },
+        {
+            "Message": "MSH|^~\\&|COPATHPLUS||IMAGER||20241219133243||OML^O21|79506|P|2.3\rPID|||89000324^^^2||TEST^MATERNITY THREE||19901106|F\rORC|NW|XA24-2||XA|||||202412191332\rOBR|1|XA24-2|XA24-2_2_6_1||||||||||||CECAL BIOPSY^^Level 3 (H&E)||||B^1^3|GIB^GIB   Gastrointestinal Bx|||||||ROUT",
+            "Name": ""
+        },
+        {
+            "Message": "MSH|^~\\&|COPATHPLUS||IMAGER||20250212144404||OML^O21|1863311|P|2.3\rPID|||A00054145^^^1||COOKIE^SUGAR||20001111|F\rORC|NW|S25-99809||SL|||||202502121443\rOBR|1|S25-99809|S25-99809_3_26_1||||||||||||Cervix, 12 o'clock, biopsy^^Cytokeratin 7, Dako||||C^^4|EPB^EPB   Endocrine Bx|||||||ROUT\r",
+            "Name": ""
+        },
+        {
+            "Message": "MSH|^~\\&|COPATHPLUS||IMAGER||20250225142240||ORM^O01|18738|P|2.3\rPID|||23456789^^^1||ONE^PROSCIA||19990101|F\rORC|CA|S25-110||S|||||202502251150\r",
+            "Name": "Delete Case"
+        },
+        {
+            "Message": "MSH|^~\\&|COPATHPLUS||IMAGER||20250225142240||ORM^O01|18738|P|2.3\rPID|||23456789^^^1||ONE^PROSCIA||19990101|F\rORC|CA|S25-110||S|||||202502251150\rOBR|1|S25-110|S25-707_1_1_1|||||||||||||",
+            "Name": "Delete part"
+        },
+        {
+            "Message": "MSH|^~\\&|COPATHPLUS||IMAGER||20250305164814||ORM^O01|18793|P|2.3\rPID|||13024768^^^1||TWENTYSIXRDONE^HD||19800329|F\rORC|CA|S24-492||SL|||||202407251103\rOBR|1|S24-492|S24-492_2_5_1||||||||||||||||B^2^1||||||||ROUT\rOBR|2|S24-492|S24-492_2_6_1||||||||||||||||B^2^2\r",
+            "Name": ""
+        }
+    ]
+}

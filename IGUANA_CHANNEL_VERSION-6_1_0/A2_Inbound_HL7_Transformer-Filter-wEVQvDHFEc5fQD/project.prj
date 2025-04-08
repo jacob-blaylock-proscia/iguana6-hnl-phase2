@@ -1,0 +1,27 @@
+{
+    "LocalDependencies": [
+        "mapBlockKey.lua",
+        "mappingTables.lua",
+        "parseOML.lua",
+        "parseORM.lua",
+        "parseORU.lua"
+    ],
+    "LuaDependencies": [
+        "barcodeUtils",
+        "date.getTimezoneOffset",
+        "date.parse",
+        "globalConfig",
+        "hl7.delimiter.fix",
+        "hl7.delimiter.unescape",
+        "tableUtils"
+    ],
+    "OtherDependencies": [
+        "HNL_OML-ORU-ORM_02252025.vmd"
+    ],
+    "timestamp": "1741292745",
+    "version_info": {
+        "build": 0,
+        "major": 6,
+        "minor": 0
+    }
+}

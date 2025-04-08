@@ -1,0 +1,30 @@
+<channel
+   name="I2_Case Stage Update Parser"
+   guid="F33CB865F756BC452D38B0E96A31F8FC"
+   description=""
+   start_automatically="true"
+   logging_level="1"
+   use_message_filter="true">
+   <to_channel>
+      <dequeue_list>
+         <dequeue
+            source_name="I1_Case Stage Webhook"
+            dequeue_guid="CEDE904749A15A91FEC563DD9C144308"/>
+      </dequeue_list>
+   </to_channel>
+   <from_channel/>
+   <message_filter
+      filter_after_logging="false"
+      log_pre_post_filter_message="true"
+      keep_vmd_updated="false"
+      original_vmd_path=""
+      filter_vmd_path=""
+      transformation_mode="0"
+      scripted_transformation_configuration_name="default"
+      error_handling="0"
+      use_translator_filter="true"
+      translator_guid="I2_Case_Stage_Update_Parser-Filter-47cC6cGzilXjEh"
+      translator_commit_id="55038b86c51e0260d528a21b2bfe43d8eb5ca94d"
+      translator_commit_comment="Update alert exceptions list">
+   </message_filter>
+</channel>

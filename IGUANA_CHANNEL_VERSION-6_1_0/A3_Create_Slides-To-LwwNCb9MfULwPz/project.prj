@@ -1,0 +1,27 @@
+{
+    "LocalDependencies": [
+        "caseUpdate.lua",
+        "checkCaseStatus.lua",
+        "checkOrphanedParts.lua",
+        "checkSlides.lua",
+        "delete.lua",
+        "deleteCase.lua",
+        "mapCaseDetails.lua",
+        "mapCaseParts.lua",
+        "mapImages.lua",
+        "mapSlides.lua",
+        "upsert.lua"
+    ],
+    "LuaDependencies": [
+        "concentriqAPI",
+        "retry",
+        "tableUtils"
+    ],
+    "OtherDependencies": [],
+    "timestamp": "1743782878",
+    "version_info": {
+        "build": 0,
+        "major": 6,
+        "minor": 0
+    }
+}

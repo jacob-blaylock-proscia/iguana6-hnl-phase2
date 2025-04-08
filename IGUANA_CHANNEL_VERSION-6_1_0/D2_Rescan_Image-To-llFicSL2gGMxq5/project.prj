@@ -1,0 +1,15 @@
+{
+    "LocalDependencies": [],
+    "LuaDependencies": [
+        "concentriqAPI",
+        "retry",
+        "tableUtils"
+    ],
+    "OtherDependencies": [],
+    "timestamp": "1743782878",
+    "version_info": {
+        "build": 0,
+        "major": 6,
+        "minor": 0
+    }
+}
