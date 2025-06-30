@@ -19,7 +19,7 @@ function checkOrphanedParts(caseDetails, msg)
    if tu.isEmpty(caseDetailsWithPartsAndSlides.slides) and msg.options.deleteCaseIfNoSlidesLeft then
       local deletedCase = api.deleteCaseDetails(caseDetails.id)
       iguana.logInfo('Case ' .. caseDetails.id .. ' deleted.')
-      return
+      return 'deletedCase'
    else
       local caseDetailsBody = mapCaseDetails(msg, caseDetails, {action = 'patch', updateStatus = true})
       local caseDetailsUpdate = api.patchCaseDetails(caseDetails.id, caseDetailsBody)

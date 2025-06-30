@@ -6,6 +6,7 @@ local tu = require 'tableUtils'
 local BASE_URL = os.getenv('CONCENTRIQ_API_URL')
 local LIVE_GET = true
 local LIVE_UPDATE = true
+local DEBUG = false
 local TIMEOUT = 10
 local RETRY = 10
 local PAUSE = 1
@@ -107,6 +108,10 @@ function concentriqAPI.httpRequest(params)
       iguana.logInfo(params.method..' '..params.endpoint..'\n'..responseHeaders.Response..'\n\nREQUEST:\n'..json.serialize{data=request}..'\n\nRESPONSE:\n'..response)
    end
 
+   if DEBUG == true then
+      iguana.logInfo(params.method..' '..params.endpoint..'\n'..responseHeaders.Response..'\n\nREQUEST:\n'..json.serialize{data=request}..'\n\nRESPONSE:\n'..response)
+   end
+
    -- Check the HTTP response and log error if not successful
    local httpSuccessful, httpMessage = checkHttpResponse(responseCode, responseHeaders)
    if not httpSuccessful then
@@ -147,6 +152,23 @@ function concentriqAPI.getCaseDetails(query)
 
 
    return caseDetails.items[1]
+end
+
+function concentriqAPI.getCaseDetailsAll(query)
+   local caseDetails = concentriqAPI.httpRequest({
+         method = 'GET',
+      endpoint = 'caseDetails',
+         parameters={
+            filter=query
+         }         
+      })
+
+   if tu.isEmpty(caseDetails.items) then
+      return nil
+   end
+
+
+   return caseDetails.items
 end
 
 function concentriqAPI.getCaseDetail(id, query)
@@ -692,8 +714,10 @@ function concentriqAPI.uploadFile(caseDetailId, directory, filename)
 
    -- Get file size
    local fileSize = #fileContent
-   trace(fileSize)
-
+   if fileSize == 0 then
+      iguana.logError('Skipping file '..directory..filename..' because it is empty')
+      return
+   end
 
    -- Create the attachment object for the case
    local attachmentBody = {  

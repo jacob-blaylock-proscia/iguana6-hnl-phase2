@@ -6,6 +6,8 @@
         "checkSlides.lua",
         "delete.lua",
         "deleteCase.lua",
+        "hasParts.lua",
+        "hasSlides.lua",
         "mapCaseDetails.lua",
         "mapCaseParts.lua",
         "mapImages.lua",
@@ -18,7 +20,7 @@
         "tableUtils"
     ],
     "OtherDependencies": [],
-    "timestamp": "1743782878",
+    "timestamp": "1750971613",
     "version_info": {
         "build": 0,
         "major": 6,

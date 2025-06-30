@@ -24,7 +24,7 @@
       error_handling="0"
       use_translator_filter="true"
       translator_guid="I2_Case_Stage_Update_Parser-Filter-47cC6cGzilXjEh"
-      translator_commit_id="55038b86c51e0260d528a21b2bfe43d8eb5ca94d"
-      translator_commit_comment="Update alert exceptions list">
+      translator_commit_id="879e92769702d7df9f31dfcfda58f6d71a807288"
+      translator_commit_comment="Set skipStatusUpdates to true">
    </message_filter>
 </channel>

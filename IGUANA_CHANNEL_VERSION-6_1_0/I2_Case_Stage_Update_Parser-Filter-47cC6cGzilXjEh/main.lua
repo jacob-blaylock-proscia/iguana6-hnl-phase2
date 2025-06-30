@@ -21,7 +21,8 @@ function main(Data)
 
 
    -- set options
-   j.options = gc.MESSAGE_OPTIONS   
+   j.options = gc.MESSAGE_OPTIONS  
+   j.options.skipStatusUpdates = true
 
    j.case = {}
    j.case.accessionId = msg.event.current.accessionId

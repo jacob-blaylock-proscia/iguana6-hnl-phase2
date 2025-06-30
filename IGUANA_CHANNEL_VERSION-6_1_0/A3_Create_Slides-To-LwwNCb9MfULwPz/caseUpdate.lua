@@ -5,6 +5,9 @@ local tu = require 'tableUtils'
 -- The main function is the first function called from Iguana.
 -- The Data argument will contain the message to be processed.
 function caseUpdate(msg)
+   -- Set log level
+   local LOG_LEVEL = (msg.options.logLevels and msg.options.logLevels.caseUpdate) or 'logError'   
+   
    local accessionId = msg.case.accessionId
 
    -- GET caseDetails to see if case exists 
@@ -12,8 +15,8 @@ function caseUpdate(msg)
       data = {
          eager = {
             ["$where"] = { 
-               accessionId = msg.case.accessionId
-               --labSiteId = msg.case.labSiteId
+               accessionId = msg.case.accessionId,
+               labSiteId = msg.case.labSiteId
             }
          }
       }
@@ -21,7 +24,7 @@ function caseUpdate(msg)
    local caseDetails = api.getCaseDetails(caseDetailsQuery)
 
    if not caseDetails then
-      iguana.logError('Case ' .. accessionId .. ' does not exist. Skipping')
+      iguana[LOG_LEVEL]('Case ' .. accessionId .. ' does not exist. Skipping')
       return
    else
       local caseDetailsUpdateBody = mapCaseDetails(msg, caseDetails, {action = 'patch'})

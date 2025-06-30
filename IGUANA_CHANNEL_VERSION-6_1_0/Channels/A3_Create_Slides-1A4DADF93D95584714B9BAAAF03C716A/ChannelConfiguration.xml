@@ -2,17 +2,20 @@
    name="A3_Create Slides"
    guid="1A4DADF93D95584714B9BAAAF03C716A"
    description=""
-   start_automatically="false"
+   start_automatically="true"
    logging_level="1"
    use_message_filter="false">
    <to_mapper
       guid="A3_Create_Slides-To-LwwNCb9MfULwPz"
-      commit_id="ca5bd7bd5a2685e36dd3582cf45eeb747a99b1b8"
-      commit_comment="Import Translators: Improved status changes update">
+      commit_id="56609fc80e9a6d0652d7e768915dd64cd2ce094c"
+      commit_comment="Import Translators: imported from core repo">
       <dequeue_list>
          <dequeue
             source_name="A2_Inbound HL7 Transformer"
             dequeue_guid="DACB20B3FA15C98C6377BBDD54635150"/>
+         <dequeue
+            source_name="I2_Case Stage Update Parser"
+            dequeue_guid="CBEAAC349231FA4B444EDB5B1D1607A4"/>
       </dequeue_list>
    </to_mapper>
    <from_channel/>

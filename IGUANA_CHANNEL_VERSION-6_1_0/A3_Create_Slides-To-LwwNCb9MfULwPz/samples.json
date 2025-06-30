@@ -23,6 +23,22 @@
         {
             "Message": "{\n    \"case\": {\n        \"accessionId\": \"S25-051064\",\n        \"caseStage\": \"diagnosisProvided\",\n        \"patientDob\": \"1948-01-09\",\n        \"patientFirstName\": \"Michael\",\n        \"patientGenderIdentity\": \"M\",\n        \"patientLastName\": \"Funderburg\",\n        \"patientMrn\": \"01541134\",\n        \"patientSex\": \"M\",\n        \"tags\": [\n            3\n        ],\n        \"udf\": {\n            \"signoutDate\": \"03/24/2025 13:38\"\n        }\n    },\n    \"messageType\": \"caseUpdate\",\n    \"options\": {\n        \"addProcedures\": true,\n        \"addSpecimens\": true,\n        \"addStains\": true,\n        \"assignedUserIdLookupField\": \"email\",\n        \"deleteCaseIfNoSlidesLeft\": true\n    }\n}",
             "Name": "Message 6"
+        },
+        {
+            "Message": "{\n    \"case\": {\n        \"accessionId\": \"S25-20847\",\n        \"files\": [\n            {\n                \"directory\": \"/media/copath_images/Scanned Protocols/\",\n                \"filename\": \"S25-20847_07042025120051.pdf\"\n            }\n        ]\n    },\n    \"messageType\": \"upsert\",\n    \"options\": {\n        \"addProcedures\": true,\n        \"addSpecimenCategories\": true,\n        \"addSpecimens\": true,\n        \"addStains\": true,\n        \"archiveStatusLocked\": true,\n        \"assignedUserIdLookupField\": \"name\",\n        \"deleteCaseIfNoSlidesLeft\": true\n    }\n}",
+            "Name": "Message 7"
+        },
+        {
+            "Message": "{\n    \"case\": {\n        \"accessionId\": \"G25-11739\",\n        \"caseStage\": \"diagnosisProvided\"\n    },\n    \"messageType\": \"caseUpdate\",\n    \"options\": {\n        \"addProcedures\": true,\n        \"addSpecimenCategories\": true,\n        \"addSpecimens\": true,\n        \"addStains\": true,\n        \"archiveStatusLocked\": true,\n        \"assignedUserIdLookupField\": \"name\",\n        \"deleteCaseIfNoSlidesLeft\": true,\n        \"logLevels\": {\n            \"imageSlideMatch\": \"logInfo\",\n            \"parseBarcode\": \"logInfo\",\n            \"caseUpdate\": \"logInfo\"\n        }\n    }\n}",
+            "Name": "Message 8"
+        },
+        {
+            "Message": "{\n    \"case\": {\n        \"accessionId\": \"S25-22528\",\n        \"files\": [\n            {\n                \"directory\": \"/media/copath_images/Scanned Protocols/\",\n                \"filename\": \"S25-22528_14042025092526.pdf\"\n            }\n        ]\n    },\n    \"messageType\": \"upsert\",\n    \"options\": {\n        \"addProcedures\": true,\n        \"addSpecimenCategories\": true,\n        \"addSpecimens\": true,\n        \"addStains\": true,\n        \"archiveStatusLocked\": true,\n        \"assignedUserIdLookupField\": \"name\",\n        \"deleteCaseIfNoSlidesLeft\": true,\n        \"logLevels\": {\n            \"caseUpdate\": \"logInfo\",\n            \"imageSlideMatch\": \"logInfo\",\n            \"parseBarcode\": \"logInfo\"\n        }\n    }\n}",
+            "Name": "Message 9"
+        },
+        {
+            "Message": "{\r    \"case\": {\r        \"accessionDate\": \"2025-04-28T15:38:14.867Z\",\r        \"accessionId\": \"SP250004421\",\r        \"caseStage\": \"building\",\r        \"labSiteId\": 2,\r        \"parts\": [\r            {\r                \"blocks\": [\r                    {\r                        \"key\": \"002-A\",\r                        \"name\": \"A\"\r                    }\r                ],\r                \"name\": \"001\",\r                \"slides\": [\r                    {\r                        \"barcode\": \"+SP250004421+002001001+4\",\r                        \"blockKey\": \"002-A\",\r                        \"images\": [\r                            {\r                                \"id\": 163\r                            }\r                        ],\r                        \"name\": \"SP250004421-002-A-001\"\r                    }\r                ]\r            }\r        ]\r    },\r    \"messageType\": \"upsert\",\r    \"options\": {\r        \"addProcedures\": true,\r        \"addSpecimens\": true,\r        \"addStains\": true,\r        \"deleteCaseIfNoSlidesLeft\": true\r    }\r}",
+            "Name": "Message 10"
         }
     ]
 }

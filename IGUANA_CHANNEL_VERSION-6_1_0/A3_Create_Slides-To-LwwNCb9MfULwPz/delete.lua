@@ -9,7 +9,7 @@ local checkCaseStatus = require 'checkCaseStatus'
 -- The Data argument will contain the message to be processed.
 function delete(msg)
    -- Parse the incoming HL7 message
-   LOG_LEVEL = msg.options.logLevel or 'logError'
+   LOG_LEVEL = (msg.options.logLevels and msg.options.logLevels.deleteSlide) or 'logError'
 
    ----------------------------------------------------------------------------
    -- CASE DETAILS CHECK
@@ -59,7 +59,7 @@ function delete(msg)
 
    -- Prevent slides with images from being deleted based on the flag.
    if slides.primaryImageId ~= json.NULL and msg.options.preventDeletionOfSlidesWithImages then
-      iguana[LOG_LEVEL]('Skipping message. This slide has images attached. barcode = ' ..barcode)
+      iguana.logInfo('Skipping message. This slide has images attached. barcode = ' ..barcode)
       return
    end
 
@@ -67,7 +67,11 @@ function delete(msg)
    local slidesDelete = api.deleteSlides(slides.id)
 
    -- Check for any orphaned blocks or parts and remove them
-   checkOrphanedParts(caseDetails, msg)
+   local checkOrphanedParts = checkOrphanedParts(caseDetails, msg)
+   if checkOrphanedParts == 'deletedCase' then
+      iguana.logInfo('Case '..caseDetails.accessionId..' was deleted. Skipping case status update')
+      return
+   end
 
    -- Now update the status based on the current state of the case if it has changed
    checkCaseStatus(msg, caseDetails)

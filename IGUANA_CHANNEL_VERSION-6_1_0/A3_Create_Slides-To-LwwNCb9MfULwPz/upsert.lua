@@ -8,6 +8,8 @@ local mapImages = require 'mapImages'
 local checkSlides = require 'checkSlides'
 local checkOrphanedParts = require 'checkOrphanedParts'
 local checkCaseStatus = require 'checkCaseStatus'
+local hasParts = require 'hasParts'
+local hasSlides = require 'hasSlides'
 
 -- The main function is the first function called from Iguana.
 -- The Data argument will contain the message to be processed.
@@ -30,6 +32,10 @@ function upsert(msg)
    local slides
    local images
 
+   -- Use helper functions to determine existence of parts and slides
+   local partExists = hasParts(msg)
+   local caseSlideExists, partSlideExists = hasSlides(msg)
+
    ----------------------------------------------------------------------------
    -- CASE DETAILS CHECK
    ----------------------------------------------------------------------------
@@ -48,11 +54,10 @@ function upsert(msg)
    caseDetails = api.getCaseDetails(caseDetailsQuery)
 
    if not caseDetails then
-      -- Case does NOT exist. Create case, parts, and slides and files
       createCaseDetails = true
-      createCaseParts   = true
-      createSlides      = true
-      createFiles       = true
+      createCaseParts   = partExists
+      createSlides      = (caseSlideExists or partSlideExists)
+      createFiles       = msg.case.files and not tu.isNotTableOrEmpty(msg.case.files)
    else
       -- Case exists. Set flag to update case details
       updateCaseDetails = true
@@ -62,15 +67,14 @@ function upsert(msg)
    -- PART / BLOCK CHECK (only if caseDetails exist)
    ----------------------------------------------------------------------------
    if caseDetails then
-      local haveParts = (msg.case.parts and not tu.isNotTableOrEmpty(msg.case.parts))
-      if haveParts then
+      if partExists then
          -- Try to get the part from the existing case
          local partName = msg.case.parts[1].name
          local casePartsQuery = json.serialize{
             data = {
                eager = { ["$where"] = { 
                      caseDetailId = caseDetails.id, 
-                     name = msg.case.parts[1].name 
+                     name = partName 
                   } 
                }
             }
@@ -91,21 +95,12 @@ function upsert(msg)
    -- SLIDE CHECK (only if caseDetails exist)
    ----------------------------------------------------------------------------
    if caseDetails then
-      -- If the top-level msg.case.slides is present
-      local haveSlides = (msg.case.slides and not tu.isNotTableOrEmpty(msg.case.slides))
-      if haveSlides then
+      if caseSlideExists then
          local barcode = msg.case.slides[1].barcode
          slides, createSlides, updateSlides = checkSlides(barcode, caseDetails.id, createSlides, updateSlides)
-      else
-         -- If slides are provided under msg.case.parts => blocks => slides
-         local haveParts = (msg.case.parts and not tu.isNotTableOrEmpty(msg.case.parts))
-         if haveParts then
-            local partSlides = msg.case.parts[1].slides
-            if partSlides and not tu.isNotTableOrEmpty(partSlides) then
-               local barcode = partSlides[1].barcode
-               slides, createSlides, updateSlides = checkSlides(barcode, caseDetails.id, createSlides, updateSlides)          
-            end
-         end
+      elseif partSlideExists then
+         local barcode = msg.case.parts[1].slides[1].barcode
+         slides, createSlides, updateSlides = checkSlides(barcode, caseDetails.id, createSlides, updateSlides)
       end
    end
 
@@ -141,43 +136,36 @@ function upsert(msg)
    ----------------------------------------------------------------------------
    -- IMAGE CHECK
    ----------------------------------------------------------------------------
-   -- If the top-level msg.case.slides is present
-   local haveSlides = (msg.case.slides and not tu.isNotTableOrEmpty(msg.case.slides))
    local barcodeData
-   if haveSlides then
+   if caseSlideExists then
       images = msg.case.slides[1].images
       barcodeData = msg.case.slides[1].barcode
-   else
-      -- If slides are provided under msg.case.parts => blocks => slides
-      local haveParts = (msg.case.parts and not tu.isNotTableOrEmpty(msg.case.parts))
-      if haveParts then
-         local partSlides = msg.case.parts[1].slides
-         if partSlides and not tu.isNotTableOrEmpty(partSlides) then
-            images = partSlides[1].images
-            barcodeData = partSlides[1].barcode          
-         end
-      end
+   elseif partSlideExists then
+      images = msg.case.parts[1].slides[1].images
+      barcodeData = msg.case.parts[1].slides[1].barcode          
    end
 
    -- If images were provided, update the images
    if images then
       updateImages = true
    else
-      -- If not, then check to see if an image for the slide already exists in the system
-      local imagesQuery = json.serialize{ 
-         data = {
-            eager = { 
-               ["$where"] = { 
-                  barcodeData = barcodeData
+      -- If not, then check to see if an image for the slide already exists in the system if a barcode is available      
+      if barcodeData then
+         local imagesQuery = json.serialize{ 
+            data = {
+               eager = { 
+                  ["$where"] = { 
+                     barcodeData = barcodeData
+                  } 
                } 
             } 
-         } 
-      }
-      images = api.getImagesAll(imagesQuery)
+         }
+         images = api.getImagesAll(imagesQuery)
 
-      -- TODO: limit images to only ones scanned on a scanner related to the lab site
-      if images then
-         updateImages = true
+         -- TODO: limit images to only ones scanned on a scanner related to the lab site
+         if images then
+            updateImages = true
+         end
       end
    end
    trace(updateImages)
@@ -209,8 +197,8 @@ function upsert(msg)
       caseDetails = api.postCaseDetails(caseDetailsBody)
    elseif updateCaseDetails and caseDetails then
       -- Only update the status if we aren't about to update slides or images
-      local updateStatus = not (createSlides or updateSlides or updateImages)
-      local caseDetailsBody = mapCaseDetails(msg, caseDetails, { workflow = "upsert", action = "patch", updateStatus = updateStatus })
+      local shouldUpdateStatus = not msg.options.skipStatusUpdates and not (createSlides or updateSlides or updateImages)
+      local caseDetailsBody = mapCaseDetails(msg, caseDetails, { workflow = "upsert", action = "patch", updateStatus = shouldUpdateStatus })
       caseDetails = api.patchCaseDetails(caseDetails.id, caseDetailsBody)
    end
 
@@ -260,7 +248,7 @@ function upsert(msg)
    if createSlides and caseDetails then
       local slidesBody = mapSlides.post(msg, caseDetails, caseParts)
       slides = api.postSlides(slidesBody)
-      
+
       -- Now update the status based on the current state of the case if it has changed
       checkCaseStatus(msg, caseDetails)    
    elseif updateSlides and slides and caseDetails then
@@ -278,7 +266,6 @@ function upsert(msg)
    -- UPDATE IMAGES
    ----------------------------------------------------------------------------
    if updateImages and slides and slides.id and images then
-
       for _, image in ipairs(images) do
          local imagesBody = mapImages(msg, slides)
          local imagesPatch = api.patchImages(image.id, imagesBody)

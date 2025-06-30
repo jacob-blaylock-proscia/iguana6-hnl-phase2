@@ -2,7 +2,7 @@
 local api = require 'concentriqAPI'
 
 function deleteCase(msg)
-   LOG_LEVEL = msg.options.logLevel or 'logError' 
+   LOG_LEVEL = (msg.options.logLevel and msg.options.logLevel.deleteCase) or 'logError' 
    
    ----------------------------------------------------------------------------
    -- CASE DETAILS CHECK
