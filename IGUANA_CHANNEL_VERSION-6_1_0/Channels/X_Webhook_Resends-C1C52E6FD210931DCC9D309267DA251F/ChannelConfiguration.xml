@@ -1,0 +1,24 @@
+<channel
+   name="X_Webhook Resends"
+   guid="C1C52E6FD210931DCC9D309267DA251F"
+   description=""
+   start_automatically="true"
+   logging_level="1"
+   use_message_filter="false">
+   <to_mapper
+      guid="X_Webhook_Resends-To-FGIcsX02uRnLfn"
+      commit_id="1bbc1d29e74764522061027eaf39674cad9ce05c"
+      commit_comment="Import Translators: Imported from core repo - don&apos;t check status if case was deleted">
+      <dequeue_list>
+         <dequeue
+            source_name="self"
+            dequeue_guid="7E0E5F664BE85E9326897070E635A27D"/>
+      </dequeue_list>
+   </to_mapper>
+   <from_mapper
+      guid="X_Webhook_Resends-From-giLoovdpCyWZsE"
+      commit_id="1bbc1d29e74764522061027eaf39674cad9ce05c"
+      commit_comment="Import Translators: Imported from core repo - don&apos;t check status if case was deleted"
+      poll_time="10000">
+   </from_mapper>
+</channel>

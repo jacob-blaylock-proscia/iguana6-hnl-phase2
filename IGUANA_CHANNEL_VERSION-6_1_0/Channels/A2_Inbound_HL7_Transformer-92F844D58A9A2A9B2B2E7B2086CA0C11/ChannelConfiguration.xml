@@ -24,7 +24,7 @@
       error_handling="0"
       use_translator_filter="true"
       translator_guid="A2_Inbound_HL7_Transformer-Filter-wEVQvDHFEc5fQD"
-      translator_commit_id="cce098235c9da8c3d446b816818fc3b62ab754c2"
-      translator_commit_comment="Correct OBR references in the loop">
+      translator_commit_id="d8980099a3eff50703268860040ce7eda44659b5"
+      translator_commit_comment="Add stat flag">
    </message_filter>
 </channel>

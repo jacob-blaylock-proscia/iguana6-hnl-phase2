@@ -1,0 +1,24 @@
+<channel
+   name="X_Alerts"
+   guid="1046CF9FA9E575E9A3968D24B16B8615"
+   description=""
+   start_automatically="false"
+   logging_level="1"
+   use_message_filter="false">
+   <to_mapper
+      guid="X_Alerts-To-55JfNnn5SIBbrP"
+      commit_id="5eeb8bd3b4d51058432659ff892ef73a33cdb06b"
+      commit_comment="Import Translators: Imported from core repo">
+      <dequeue_list>
+         <dequeue
+            source_name="self"
+            dequeue_guid="95F9D95C9DDB656F726AEFE4AEE52C5C"/>
+      </dequeue_list>
+   </to_mapper>
+   <from_mapper
+      guid="X_Alerts-From-mznC4KlXXUBlDc"
+      commit_id="55038b86c51e0260d528a21b2bfe43d8eb5ca94d"
+      commit_comment="Update alert exceptions list"
+      poll_time="1800000">
+   </from_mapper>
+</channel>

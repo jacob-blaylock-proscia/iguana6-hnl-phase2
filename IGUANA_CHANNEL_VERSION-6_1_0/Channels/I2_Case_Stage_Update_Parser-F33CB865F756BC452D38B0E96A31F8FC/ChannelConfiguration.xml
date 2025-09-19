@@ -8,8 +8,8 @@
    <to_channel>
       <dequeue_list>
          <dequeue
-            source_name="I1_Case Stage Webhook"
-            dequeue_guid="CEDE904749A15A91FEC563DD9C144308"/>
+            source_name="I1_CaseStage Inbound SFTP"
+            dequeue_guid="5F2CF43148140E8FD8424748BD9BFB3B"/>
       </dequeue_list>
    </to_channel>
    <from_channel/>

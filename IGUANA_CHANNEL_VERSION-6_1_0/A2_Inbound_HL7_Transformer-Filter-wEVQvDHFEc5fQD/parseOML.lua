@@ -52,7 +52,7 @@ function parseOML(msg)
    caseDetails.patientGenderIdentity = caseDetails.patientSex
    caseDetails.specimenCategoryCode = msg.OBR[1][20][2][1]:S()
    caseDetails.specimenCategoryName = msg.OBR[1][20][2][1]:S()
-
+   
    for i=1, #msg.OBR do
 
       -- Parts
@@ -68,6 +68,11 @@ function parseOML(msg)
 
       -- Copy case data
       j.case = tu.deepCopy(caseDetails)
+      
+      -- Check for stat case
+      if msg.OBR[i][27][1][1][1]:S() == 'STAT' then
+         j.case.isStat = true
+      end
 
       -- Part
       j.case.parts = {{}}

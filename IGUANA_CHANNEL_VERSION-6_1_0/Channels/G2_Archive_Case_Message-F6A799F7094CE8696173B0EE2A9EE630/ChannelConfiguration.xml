@@ -8,8 +8,8 @@
    <to_channel>
       <dequeue_list>
          <dequeue
-            source_name="G1_Archive Case Webhook"
-            dequeue_guid="E34C4B5497BB9B082E405B12FD19023D"/>
+            source_name="G3_Archive Inbound - SFTP"
+            dequeue_guid="F2F561F2D073593119375C05C4AE3DBC"/>
       </dequeue_list>
    </to_channel>
    <from_channel/>
@@ -24,7 +24,7 @@
       error_handling="0"
       use_translator_filter="true"
       translator_guid="G2_Archive_Case_Message-Filter-8u2dzH971LW3pw"
-      translator_commit_id="ca5bd7bd5a2685e36dd3582cf45eeb747a99b1b8"
-      translator_commit_comment="Import Translators: Improved status changes update">
+      translator_commit_id="1bbc1d29e74764522061027eaf39674cad9ce05c"
+      translator_commit_comment="Import Translators: Imported from core repo - don&apos;t check status if case was deleted">
    </message_filter>
 </channel>

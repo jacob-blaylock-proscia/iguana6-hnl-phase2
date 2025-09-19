@@ -1,0 +1,45 @@
+<channel
+   name="C3_Outbound HL7"
+   guid="AF68670658175F3766237350216FA6FF"
+   description=""
+   start_automatically="true"
+   logging_level="1"
+   use_message_filter="false">
+   <to_llp_client
+      remote_host="10.2.92.127"
+      remote_port="20500"
+      wait_for_ack="true"
+      ack_timeout="10000"
+      ack_verification_type="0"
+      ack_vmd_path="/opt/iguana/Iguana_620/iNTERFACEWARE-Iguana/ack_verify.vmd"
+      original_vmd_path="/opt/iguana/Iguana_620/iNTERFACEWARE-Iguana/ack_verify.vmd"
+      keep_vmd_updated="false"
+      retry_on_ack_timeout="true"
+      retry_on_ack_verification_failed="false"
+      unlimited_count_of_retry="false"
+      count_of_retry="5"
+      disconnect_between_retries="true"
+      ack_reconnect_interval="10000"
+      ack_error_handling="1"
+      persistent_connection="true"
+      connection_timeout="10000"
+      unlimited_max_count_of_reconnect="false"
+      max_count_of_reconnect="60"
+      connection_lost_reconnect_interval="10000">
+      <dequeue_list>
+         <dequeue
+            source_name="C2_Contextual Launch"
+            dequeue_guid="6B17048B7957E4FBD15DBB446F2D3768"/>
+         <dequeue
+            source_name="G2_Archive Case Message"
+            dequeue_guid="E6DC91C1DFB79E3507FDA00501692319"/>
+         <dequeue
+            source_name="C3_Inbound HL7 - SFTP"
+            dequeue_guid="EFFB899137AF38414086F672F028D8A9"/>
+         <dequeue
+            source_name="G3_Archive Inbound - SFTP"
+            dequeue_guid="936CE0B62887E393FE85036966E2778B"/>
+      </dequeue_list>
+   </to_llp_client>
+   <from_channel/>
+</channel>

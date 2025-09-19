@@ -1,0 +1,24 @@
+<channel
+   name="X_Channel Restart"
+   guid="25A9A601FCCA4B4F19B0B2CCBF873B9B"
+   description=""
+   start_automatically="false"
+   logging_level="1"
+   use_message_filter="false">
+   <to_mapper
+      guid="X_Channel_Restart-To-r1RkCWj1O6kmB4"
+      commit_id="5eeb8bd3b4d51058432659ff892ef73a33cdb06b"
+      commit_comment="Import Translators: Imported from core repo">
+      <dequeue_list>
+         <dequeue
+            source_name="self"
+            dequeue_guid="B09B84D752639345931952600C4580CD"/>
+      </dequeue_list>
+   </to_mapper>
+   <from_mapper
+      guid="X_Channel_Restart-From-jUMQPYOI4GF4gp"
+      commit_id="55038b86c51e0260d528a21b2bfe43d8eb5ca94d"
+      commit_comment="Update alert exceptions list"
+      poll_time="60000">
+   </from_mapper>
+</channel>

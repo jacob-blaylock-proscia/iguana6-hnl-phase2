@@ -79,6 +79,10 @@
         {
             "Message": "MSH|^~\\&|COPATHPLUS||IMAGER||20250305164814||ORM^O01|18793|P|2.3\rPID|||13024768^^^1||TWENTYSIXRDONE^HD||19800329|F\rORC|CA|S24-492||SL|||||202407251103\rOBR|1|S24-492|S24-492_2_5_1||||||||||||||||B^2^1||||||||ROUT\rOBR|2|S24-492|S24-492_2_6_1||||||||||||||||B^2^2\r",
             "Name": ""
+        },
+        {
+            "Message": "MSH|^~\\&|COPATHPLUS||IMAGER||20250529085959||OML^O21|200411|P|2.3\rPID|||12122022^^^1||TESTING^ADT||19640506|M\rORC|NW|S25-332||S|||||202505290859\rOBR|1|S25-332|S25-332_1_1_1||||||||||||Stomach, biopsy^^Level 1-3||||A^1^1|GIB^GIB   Gastrointestinal Bx|||||||STAT\r",
+            "Name": ""
         }
     ]
 }
